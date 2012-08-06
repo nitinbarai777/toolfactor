@@ -1,0 +1,17 @@
+<div class="editablebox">
+<%= form_for @o_single do |f| %>
+  <%#= f.error_messages %>
+  <p>
+    <%= f.hidden_field :tool_id, :value => session[:tool_id] %>
+    <%= f.label :factor_id %>
+    <%= f.select :factor_id, options_for_select(["select factor"] + Factor.all.map { |c| [c.name, c.id] },@o_single.factor_id)  %>
+  </p>
+
+
+  <p><%= f.submit :value => t("general.save") %>
+<div class="btn"><%= link_to t("general.back"), tool_factors_path %></div>
+</p>
+<% end %>
+
+<div class="cl"></div>
+</div>

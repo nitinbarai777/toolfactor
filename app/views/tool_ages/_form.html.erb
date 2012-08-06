@@ -1,0 +1,17 @@
+<div class="editablebox">
+<%= form_for @o_single do |f| %>
+  <%#= f.error_messages %>
+  <p>
+    <%= f.hidden_field :tool_id, :value => session[:tool_id] %>
+    <%= f.label :age_id %>
+    <%= f.select :age_id, options_for_select(["select age"] + Age.all.map { |c| [c.name, c.id] },@o_single.age_id)  %>
+  </p>
+
+
+  <p><%= f.submit :value => t("general.save") %>
+<div class="btn"><%= link_to t("general.back"), tool_ages_path %></div>
+</p>
+<% end %>
+
+<div class="cl"></div>
+</div>

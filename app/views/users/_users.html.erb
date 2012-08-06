@@ -1,0 +1,24 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+<table class="pretty" width="100%">
+  <tr>
+    <th><%= sortable "username" %></th>
+    <th><%= sortable "email" %></th>
+    <th><%= sortable "mobile_number" %></th>
+	<th width="20%"><%= sortable "created_at" %></th>
+	<th width="10%"><%= t("general.actions") %></th>
+  </tr>
+  <% for user in @users %>
+    <tr>
+      <td><%= user.username %></td>
+      <td ><%= user.email %></td>
+      <td><%= user.mobile_number %></td>
+      <td><%= user.created_at.to_s(:pretty) %></td>
+      <td> <%= link_to image_tag("edit.png", :width => "16px", :height => "16px", :title => "Edit"), edit_user_path(user) %>
+		   <%= link_to image_tag("delete.png", :width => "16px", :height => "16px", :title => "Delete"), user, :confirm => 'Are you sure?', :method => :delete %>
+		</td>
+    </tr>
+  <% end %>
+</table>
+
+<%= will_paginate @users %>

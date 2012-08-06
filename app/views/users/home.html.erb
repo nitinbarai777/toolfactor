@@ -1,0 +1,13 @@
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="sidebar round">
+      <h3> 
+        <%= image_tag current_user.image_url(:thumb), :width => 80, :height => 80 if current_user.image? %>
+      </h3>
+    </td>
+    <td></td>
+    <td class="sidebar round">
+      Welcome, <strong><%= current_user.username %> </b> (<%= current_user.email %>)</strong>
+    </td>  
+  </tr>  
+</table>

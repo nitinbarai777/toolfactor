@@ -1,0 +1,27 @@
+<header class="headline">
+    <%= link_to(image_tag("index.jpeg", :width => "150px", :height => "90px", :alt => "ToolFactor", :class => "round"), "/admin") %>
+    <nav class="wlcm-menu">
+      <ul>
+		 <% if !session[:user_id].nil? %>
+		   <li><%= image_tag "wc-admin.png" %>Welcome, <%= current_user.username %></li>
+			<li><%= image_tag "logout.png" %><%= link_to t("general.logout"), :logout%></li>
+		<% else %>
+			<li>Welcome, Admin</li>
+			<li><%= link_to t("general.home"), root_path %></li>
+		<% end %>
+      </ul>
+    </nav>
+<br />
+
+		 <% if !session[:user_id].nil? %>
+    		<nav class="menu">
+		      <ul>
+				<li><%= link_to t("general.tool"), tools_path %></li>
+				<li><%= link_to t("general.age"), ages_path %></li>
+				<li><%= link_to t("general.factor"), factors_path %></li>
+
+      		  </ul>
+		    </nav>
+		<% end %>
+<br />
+</header>

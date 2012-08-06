@@ -1,0 +1,115 @@
+<div class="admintextbox">
+<div class="admintextbox-leftpart ">
+<%= form_for(@user) do |f| %>
+
+
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+	<span><% if @user.errors[:username].any? %>
+		<%= raw @user.errors[:username].first %></span>
+	<% end %>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+	<span><% if @user.errors[:email].any? %>
+		<%= raw @user.errors[:email].first %></span>
+	<% end %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+	<span><% if @user.errors[:first_name].any? %>
+		<%= raw @user.errors[:first_name].first %></span>
+	<% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+	<span><% if @user.errors[:last_name].any? %>
+		<%= raw @user.errors[:last_name].first %></span>
+	<% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :zipcode %>
+    <%= f.text_field :zipcode %>
+  </div>
+  </div>
+<div class="admintextbox-leftpart ">
+
+  
+
+
+  <div class="field">
+    <%= f.label :contact %>
+    <%= f.text_field :contact %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mobile_number %>
+    <%= f.text_field :mobile_number %>
+	<span><% if @user.errors[:mobile_number].any? %>
+		<%= raw @user.errors[:mobile_number].first %></span>
+	<% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :carrier_id %>
+	<%= f.select :carrier_id, options_for_select(Carrier.all.map { |c| [c.name, c.id] }, @user.carrier_id)  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gateway_id %>
+	<%= f.select :gateway_id, options_for_select(Gateway.all.map { |c| [c.name, c.id] }, @user.gateway_id)  %>
+  </div>
+<% if current_user.is_admin == 1 %>
+  <div class="field">
+  <div class="checkbox">
+    <%= f.label 'User Role' %>
+    <%#= f.check_box :is_admin %>
+	<%= f.select :is_admin, options_for_select([["Select Role", ""], ["Admin", 1], ["Merchant", 2], ["User", 3]], @user.is_admin)  %>
+    </div>
+  </div>
+<% end %>
+  <div class="field">
+   <div class="checkbox">
+    <%= f.label :is_active %>
+    <%= f.check_box :is_active %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit :Save %>
+<!-- <div class="btn"> <%#= link_to "Show", @user %> </div>-->
+<% if session[:is_admin] == 1 %>
+  <div class="btn"><%= link_to "View All", users_path %></div>
+<% end %>
+  </div>
+<% end %>
+
+</div>
+<div class="cl"></div>
+</div>
+

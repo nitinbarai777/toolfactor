@@ -1,0 +1,17 @@
+<h3><%= t("general.factors") %></h3>
+
+<%= form_tag factors_path, :method => 'get', :id => "div_update_search" do %>
+  <p>
+    <%= t("general.search") %>: <%= text_field_tag :search, params[:search] %>
+    <%#= submit_tag t("general.search"), :name => nil %>
+  </p>
+  <div id="div_update"><%= render 'fetchAll' %></div>
+<% end %>
+
+
+<div class="btn">
+	<%= link_to t("general.Add"), new_factor_path %>
+</div>
+
+<div class="cl"></div>
+

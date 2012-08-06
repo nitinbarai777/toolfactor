@@ -1,0 +1,11 @@
+<h3><%= Tool.find(session[:tool_id].to_i).name %>'s <%= t("general.factors") %></h3>
+  <div id="div_update"><%= render 'fetchAll' %></div>
+<div class="btn">
+	<%= link_to t("general.Add"), new_tool_factor_path %>
+</div>
+
+<div class="btn">
+	<%= link_to t("general.back"), tools_path %>
+</div>
+
+<div class="cl"></div>

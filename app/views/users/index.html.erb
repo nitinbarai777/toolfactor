@@ -1,0 +1,16 @@
+<h3><%= t("general.users") %></h3>
+
+<%= form_tag users_path, :method => 'get', :id => "users_search" do %>
+  <p>
+    Search: <%= text_field_tag :search, params[:search] %>
+    <%#= submit_tag "Search", :name => nil %>
+  </p>
+  <div id="users"><%= render 'users' %></div>
+<% end %>
+
+
+<div class="btn">
+	<%= link_to t("general.Add"), new_user_path %>
+</div>
+<div class="cl"></div>
+

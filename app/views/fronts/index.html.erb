@@ -1,0 +1,36 @@
+<div class="main-containt ">
+<div class="pagestext">
+<h3><%= t("general.find_person") %></h3>
+<div class="contacttext">
+		<%= form_tag fronts_path, :method => 'get', :id => "div_update_search_tool" do %>
+        	
+                <p><label><%= t("general.age") %>: <%= select_tag :age_id, options_for_select([["Select Age", ""]] + Age.all.map { |c| [c.name, c.id] }), :width => "30%"  %></label></p>
+				
+                <p><strong><%= t("general.factors") %>: </strong>
+
+				  <% for o_row_factors in Factor.all %>
+					<label><%= radio_button_tag "factors[#{o_row_factors.id}]", o_row_factors.id %> <%= o_row_factors.name %></label>
+				  <% end %>
+
+				</label></p>
+
+				<p>
+					<%= submit_tag t("general.find_person"), :name => nil %>
+					<div class="cl"></div>
+				</p>
+
+            
+		<% end %>
+	</div>
+</div>
+</div>
+
+
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+		$('#div_update_search_tool').submit(function() {
+		    $.get($("#div_update_search_tool").attr("action"), $("#div_update_search_tool").serialize(), null, "script");
+		    return false;
+		});
+	});
+</script>

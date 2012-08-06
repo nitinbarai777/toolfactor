@@ -1,0 +1,17 @@
+<h3><%= t("general.tools") %></h3>
+
+<%= form_tag tools_path, :method => 'get', :id => "div_update_search" do %>
+  <p>
+    <%= t("general.search") %>: <%= text_field_tag :search, params[:search] %>
+    <%#= submit_tag t("general.search"), :name => nil %>
+  </p>
+  <div id="div_update"><%= render 'fetchAll' %></div>
+<% end %>
+
+<% if session[:is_admin] == 1 %>
+<div class="btn">
+	<%= link_to t("general.Add"), new_tool_path %>
+</div>
+<% end %>
+<div class="cl"></div>
+

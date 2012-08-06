@@ -1,0 +1,243 @@
+div.field, div.actions {
+    margin-bottom: 10px;
+}
+.container {
+    width: 710px;
+}
+body {
+    background: none repeat scroll 0 0 #4B7399;
+}
+header {
+    padding-top: 0px;
+}
+header img {
+    background: none repeat scroll 0 0 #FFFFFF;
+    padding: 1em;
+}
+section {
+    background: #FFFFFF;
+    font-size:13px;
+    margin-top: 1em;
+    padding: 20px; -webkit-box-shadow:  0px 0px 3px 3px rgba(206, 206, 205, 0.5); box-shadow:  0px 0px 3px 3px rgba(206, 206, 205, 0.5);
+}
+section h3 { border-bottom: 1px dashed #000000; color: #BB3830; font-size: 20px; font-weight: bold; margin: 0 0 10px; padding: 0 0 5px;}
+section h1 {
+    font-size: 200%;
+}
+a {
+    color: #0099CC;
+    text-decoration: none;
+}
+a:hover {
+    color: #a31e23;
+    text-decoration:none;
+}
+a:visited {
+    color: #006699;
+}
+nav {
+    float: right;
+}
+nav {
+    white-space: nowrap;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    display: inline-block; background:url(/images/nav-bg.jpg) bottom left repeat-x; height:28px; font-size:13px; font-weight:bold; color:#414141;
+    list-style-type: none;
+    padding:0; line-height:28px; border:#88b6c3 solid 1px; -webkit-border-radius:5px 5px 0 0;  -moz-border-radius:5px 5px 0 0;  border-radius:5px 5px 0 0; border-bottom:none;
+}
+nav ul li a {
+    padding: 0 7px; color:#414141;
+}
+nav ul li a:visited {
+    color: #414141;
+}
+nav ul li a:hover {
+    text-decoration: none; color:#a31e23;
+}
+a.signup_button {
+    background: none repeat scroll 0 0 #006400; color: #FFFFFF;
+    display: block;
+    font-size: 150%;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    text-align: center;
+    width: 190px;
+}
+.round {
+    border-radius: 10px 10px 10px 10px; 
+}
+footer {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 18px;
+    text-align: center;
+	background:url(/images/admin-hed-line.jpg) top left repeat-x; 
+}
+footer nav {
+    float: none;
+}
+nav {
+    float: right;
+}
+.field_with_errors {
+    display: table;
+
+}
+#error_explanation {
+ font-size:13px; font-style:italic; color:#ff0000; text-align:left;
+}
+#error_explanation h2 {
+    color: #414141;
+    font-size: 12px;
+    margin:0;
+    padding:0;
+    text-align: left;
+}
+#error_explanation p {
+    color: #333333;
+    padding: 5px;
+}
+#error_explanation ul li {
+    list-style: none; margin:0; padding:0; line-height:20px;
+}
+h1.micropost {
+    margin-bottom: 0.3em;
+}
+table.microposts {
+    margin-top: 1em;
+}
+table.microposts tr {
+    height: 70px;
+}
+table.microposts tr td.gravatar {
+    border-top: 1px solid #CCCCCC;
+    vertical-align: top;
+    width: 50px;
+}
+table.microposts tr td.micropost {
+    border-top: 1px solid #CCCCCC;
+    padding-top: 10px;
+    vertical-align: top;
+}
+table.microposts tr td.micropost span.timestamp {
+    color: #666666;
+    display: block;
+    font-size: 85%;
+}
+div.user_info img {
+    padding-right: 0.1em;
+}
+div.user_info a {
+    text-decoration: none;
+}
+div.user_info span.user_name {
+    position: absolute;
+}
+div.user_info span.microposts {
+    font-size: 80%;
+}
+form.new_micropost {
+    margin-bottom: 2em;
+}
+form.new_micropost textarea { height: 4em; margin-bottom: 0; }
+
+.admintextbox {width:950px;  }
+.admintextbox-leftpart { width:475px; float:left; }
+.admintextbox span { font-size:12px; font-style:italic; display:block; margin-top:-7px; color:#ff0000; }
+.admintextbox em { font-size:12px; font-style:normal; display:block; margin-top:-24px; color:#ccc; padding-bottom:8px; }
+.admintextbox-leftpart form { margin-left:0;}
+
+.admintextbox  input, textarea {
+    -moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.admintextbox  input, textarea, select, .uneditable-input {
+    border: 1px solid #CCCCCC;
+    border-radius: 3px 3px 3px 3px;
+    color: #555555;
+    display: inline-block;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    height: 18px;
+    line-height: 18px;
+    margin-bottom: 9px;
+    padding: 4px;
+    width: 270px; 
+}
+.admintextbox select, input[type="file"] {
+    height: 28px;
+    line-height: 28px; }
+	
+.admintextbox select {
+  width: 280px;
+  background-color: #ffffff;
+}
+.admintextbox input[type="button"],
+.admintextbox input[type="reset"],
+.admintextbox input[type="submit"] {
+  width: auto;
+  height: auto; background:#bb372d; font-size:15px; text-transform:uppercase; color:#fff; text-align:center; padding:7px 15px; border-radius:5px; -webkit-border-radius:5px;  moz-border-radius:5px; font-family:Arial, Helvetica, sans-serif; font-weight:bold; border:none; float:left; cursor:pointer;
+}
+.admintextbox label {
+    color: #333333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.checkbox { width:450px; float:left; }
+.checkbox input[type="checkbox"] { width:14px; float:left; margin:0 5px 10px 0; }
+.btn { width: auto;
+  height: auto; background:#bb372d; font-size:15px; text-transform:uppercase; color:#fff; text-align:center; padding:7px 15px; border-radius:5px; -webkit-border-radius:5px;  moz-border-radius:5px; font-family:Arial, Helvetica, sans-serif; font-weight:bold; border:none; float:left; margin-left:10px;
+}
+.btn a { color:#fff; text-decoration:none; }
+.btn a:hover { color:#fff; text-decoration:none; }
+
+.cl { clear:both;}
+.admintextbox ul, li { margin:0; padding:0; }
+
+
+.editablebox {width:100%;  }
+
+.editablebox  input, textarea {
+    -moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.editablebox  input, textarea, select, .uneditable-input {
+    border: 1px solid #CCCCCC;
+    border-radius: 3px 3px 3px 3px;
+    color: #555555;
+    display: inline-block;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    height: 18px;
+    line-height: 18px;
+    margin-bottom: 9px;
+    padding: 4px;
+    width: 270px; 
+}
+.editablebox select, input[type="file"] {
+    height: 28px;
+    line-height: 28px; }
+	
+.editablebox select {
+  width: 280px;
+  background-color: #ffffff;
+}
+.editablebox input[type="button"],
+.editablebox input[type="reset"],
+.editablebox input[type="submit"] {
+  width: auto;
+  height: auto; background:#bb372d; font-size:15px; text-transform:uppercase; color:#fff; text-align:center; padding:7px 15px; border-radius:5px; -webkit-border-radius:5px;  moz-border-radius:5px; font-family:Arial, Helvetica, sans-serif; font-weight:bold; border:none; float:left; cursor:pointer;
+}
+.editablebox label {
+    color: #333333;
+    display: block;
+    margin-bottom: 5px;
+}

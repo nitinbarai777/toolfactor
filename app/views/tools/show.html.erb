@@ -1,0 +1,36 @@
+<h3><%= t("general.show_detail") %></h3>
+
+<p>
+  <strong>Name:</strong>
+  <%= @o_single.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @o_single.description.html_safe %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@o_single.image) %>
+</p>
+
+
+  
+<p>
+  <strong>Ages:</strong>&nbsp;
+  <% for o_row_ages in @o_tool_ages %>
+	<span><%= o_row_ages.age.name %></span>,&nbsp;&nbsp;
+  <% end %>
+</p>
+
+
+<p>
+  <strong>Factors:</strong>&nbsp;
+  <% for o_row_factors in @o_tool_factors %>
+	<span><%= o_row_factors.factor.name %></span>,&nbsp;&nbsp;
+  <% end %>
+</p>
+
+<div class="btn"><%= link_to t("general.back"), tools_path %></div>
+<div class="cl"></div>

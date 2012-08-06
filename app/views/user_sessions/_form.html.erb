@@ -1,0 +1,27 @@
+<%= form_for(@user_session) do |f| %>
+  
+<div class="loginfom">
+
+<h3>Login</h3>
+<% if @user_session.errors.any? %>
+    <div id="error_explanation">
+
+      <% @user_session.errors.full_messages.each do |msg| %>
+        <%= msg %>
+      <% end %>
+
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="actions">
+    <%= f.submit :Login %>
+  </div>
+  </div>
+<% end %>

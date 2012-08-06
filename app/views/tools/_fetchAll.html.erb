@@ -1,0 +1,26 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+<table class="pretty" width="100%">
+  <tr>
+    <th><%= sortable "name" %></th>
+    <th><%= sortable "description" %></th>
+	<th width="20%"><%= sortable "created_at" %></th>
+	<th width="20%"><%= t("general.actions") %></th>
+  </tr>
+  <% for o_row in @o_all %>
+    <tr>
+      <td><%= o_row.name %></td>
+      <td><%= o_row.description.html_safe %></td>
+      <td><%= o_row.created_at.to_s(:pretty) %></td>
+      <td> 
+		<%= link_to image_tag("edit.png", :width => "16px", :height => "16px", :title => t("general.edit")), edit_tool_path(o_row) %>
+		<%= link_to image_tag("delete.png", :width => "16px", :height => "16px", :title => t("general.destroy")), o_row, :confirm => t('general.are_you_sure_to_delete'), :method => :delete %>
+	    <%= link_to image_tag("showButton.gif", :title => t("general.show")), o_row %>
+
+      <%= link_to image_tag("detail-icon.png", :width => "16px", :height => "16px", :title => t("general.age_details")), age_list_path(o_row.id) %>
+      <%= link_to image_tag("detail-icon.png", :width => "16px", :height => "16px", :title => t("general.factor_details")), factor_list_path(o_row.id) %>
+		</td>
+    </tr>
+  <% end %>
+</table>
+<%= will_paginate @o_all %>
