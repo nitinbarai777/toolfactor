@@ -1,6 +1,8 @@
 class Tool < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   attr_accessible :description, :image, :name
+  has_many :tool_ages
+  has_many :tool_factors
 
   def self.search(search)
     if search
@@ -11,13 +13,15 @@ class Tool < ActiveRecord::Base
   end
 
   def self.get_search_tools(age_id, factors)
-		if age_id != "" && factors != ""
-
-		  joins(:tool_age, :tool_factor).where("merchants.id" => merchant_id, "merchant_locations.city_id" => city_id, "merchant_locations.area_id" => area_id).select("merchants.id, merchants.name, merchants.email, merchants.url, merchant_locations.city_id, merchant_locations.area_id, merchant_locations.contact, cities.name as cityname, areas.name as areaname, coupons.name as couponname, coupons.price, coupons.valid_to")
-
-		end
-
-
+	if age_id != "" && factors != ""
+	  joins(:tool_ages, :tool_factors).where("tool_ages.age_id" => age_id, "tool_factors.factor_id" => [factors]).select("tools.name, tools.description, tools.image")
+	elsif age_id != "" && factors == ""
+	  joins(:tool_ages, :tool_factors).where("tool_ages.age_id" => age_id).select("tools.name, tools.description, tools.image")
+	elsif age_id == "" && factors != ""
+	  joins(:tool_ages, :tool_factors).where("tool_factors.factor_id" => [factors]).select("tools.name, tools.description, tools.image")
+	else
+	  scoped
+	end
   end
 
 end
