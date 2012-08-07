@@ -1,32 +1,28 @@
 <div class="main-containt ">
 <div class="pagestext">
-<h3><%= t("general.find_person") %></h3>
-<div class="contacttext">
+	<h3><%= t("general.find_person") %></h3>
+	<div class="contacttext">
 		<%= form_tag fronts_path, :method => 'get', :id => "div_update_search_tool" do %>
-        	
-                <p><strong><%= t("general.age") %>:</strong> <%= select_tag :age_id, options_for_select([["Select Age", ""]] + Age.all.map { |c| [c.name, c.id] }), :width => "30%"  %></p>
+                <p><strong><%= t("general.select_age_range") %>: </strong><%= select_tag :age_id, options_for_select([[t("general.select_age_range"), ""]] + Age.all.map { |c| [c.name, c.id] }), :width => "30%"  %></p>
 				
                 <p><strong><%= t("general.choose_factors") %>: </strong>
-
-				  <% @j = 0 %>
-				<ul>
-				  <% for o_row_factors in Factor.all %>
-					<% if @j % 2 == 0 %>	
-						<li><%= radio_button_tag "tool[factors][#{@j}]", o_row_factors.id %> <%= o_row_factors.name %> OR 
-					<% else %>
-						<%= radio_button_tag "tool[factors][#{@j-1}]", o_row_factors.id %> <%= o_row_factors.name %></li>
-					<% end %>
-					<% @j = @j + 1 %>
-				  <% end %>
-				</ul>
+				    <% @j = 0 %>
+					<ul>
+					  <% for o_row_factors in Factor.all %>
+						<% if @j % 2 == 0 %>	
+							<li><%= radio_button_tag "tool[factors][#{@j}]", o_row_factors.id %> <%= o_row_factors.name %> OR 
+						<% else %>
+							<%= radio_button_tag "tool[factors][#{@j-1}]", o_row_factors.id %> <%= o_row_factors.name %></li>
+						<% end %>
+						<% @j = @j + 1 %>
+					  <% end %>
+					</ul>
 				</p>
-
 				<p>
 					<%= submit_tag t("general.find_person"), :name => nil %>
 					<div class="cl"></div>
 				</p>
-
-            <div id="div_update"><%= render 'searchTool' %></div>
+	            <div id="div_update"><%= render 'searchTool' %></div>
 		<% end %>
 	</div>
 </div>

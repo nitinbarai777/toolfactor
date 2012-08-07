@@ -18,6 +18,7 @@ en:
     no_result: No Result
     search: Search
     new: New
+    Add: Add
     actions: Actions
     edit: Edit
     destroy: Destroy
@@ -27,57 +28,39 @@ en:
     save: Save
     back: Back
     show_detail: Show detail
-    new_user_registration: New user registration
     login: Login
     is_active: Active
-    merchant_details: Merchant Details
-    coupon_details: Coupon Details
-    merchant: Merchant
     admin_panel: Admin Panel
-    merchant_locations: Merchant Locations
-    locations: Locations
-    merchants: Merchants
-    coupons: coupons
-    users: Users
-    gateways: Gateways
-    coupon_types: Coupon Types
-    cities: Cities
-    city: City
-    categories: Categories
-    carriers: Carriers
-    areas: Areas
-    area: Area
-    edit_user: Edit User
     close: Close
-    more: More
-    edit_profile: Edit Profile
-    view_coupon: View Coupon
-    get_coupon: GET COUPON
     username_required: Username Required
     password_requied: Password Requied
     login_successfully: Login Successfully
     credentials_not_valid: Credentials you entered are not valid.Please check the spelling for both username and password
-    successfully_registered: Successfully Registered
     profile_updated_successfully: Profile Updated Successfully
     email_required: Email Required
-    password_has_been_sent_to_your_email_address: Password has been sent to your email address
     no_user_exists_for_provided_email_address: No user exists for provided email address
     password_required: Password Required
-    password_does_not_match: Password does not match
-    password_successfully_updated: Password successfully updated
-    password_does_not_updated: Password does not updated
-    provide_mobile_number_to_ getcoupon: Please provide your mobile number in profile page to get coupon
-    discount_Coupon_sent_email_mobile: The Discount Coupon has been sent to your registered mobile number and email ID
-    get_coupone_after_24_hours: You can get this coupone after 24 hours
     something_is_broken: Something is broken
     logout: Logout
     home: Home
-    facebook_users: Facebook Users
-    get_coupons: Get Coupons
     contact_us: Contact Us
-    sign_up: Sign Up
-    profile: Profile
-    change_password: Change Password
-    search_coupon: Search Coupon
     search: Search
     created_at: Date
+    all_rights_reserved: All Rights Reserved By WebAdvisor 2012
+    web_advisor: Web Advisor
+    welcome: Welcome
+    welcome_admin: Welcome, Admin
+    tools: Tools
+    ages: Ages
+    factors: Factors
+    report: Report
+    web_advisor_title: WebAdvisor
+    select_age_range: Select Age
+    choose_factors: Choose Factors
+    tool_suggest: Tool Suggest
+    tool_name: Tool Name
+    tool_description: Tool Description
+    tool_image: Tool Image
+    logs: Logs
+    filed_required: This filed is required.
+    select_factor: Select Factor

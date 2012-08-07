@@ -1,5 +1,6 @@
 class Age < ActiveRecord::Base
   attr_accessible :name
+  validates :name, :presence => true
   def self.search(search)
     if search
      	where('name LIKE ?', "%#{search}%")

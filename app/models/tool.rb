@@ -3,6 +3,7 @@ class Tool < ActiveRecord::Base
   attr_accessible :description, :image, :name
   has_many :tool_ages
   has_many :tool_factors
+  validates :name, :presence => true
 
   def self.search(search)
     if search

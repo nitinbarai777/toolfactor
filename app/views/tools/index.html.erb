@@ -8,10 +8,9 @@
   <div id="div_update"><%= render 'fetchAll' %></div>
 <% end %>
 
-<% if session[:is_admin] == 1 %>
 <div class="btn">
 	<%= link_to t("general.Add"), new_tool_path %>
 </div>
-<% end %>
+
 <div class="cl"></div>
 

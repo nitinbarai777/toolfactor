@@ -3,7 +3,7 @@ class ToolReportsController < ApplicationController
 
   # fetch all records
   def index
-    @o_all = ToolReport.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
+    @o_all = ToolReport.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 20, :page => params[:page])
 
   end
 

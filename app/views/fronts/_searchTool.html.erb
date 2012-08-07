@@ -3,10 +3,10 @@
 <% if @o_all %>
 	<h3><%= t("general.tool_suggest") %></h3>
 
-	<%= "Name" %>: <strong><%= @o_all.name %></strong><br />
-	<%= "Description" %>: <strong><%= @o_all.description.html_safe %></strong><br />
-	<%= "Image" %>: <%= image_tag(@o_all.image) %><%= @o_all.image %><br />
-	<%= "Factors" %>: 
+	<%= t("general.tool_name") %>: <strong><%= @o_all.name %></strong><br />
+	<%= t("general.tool_description") %>: <strong><%= @o_all.description.html_safe %></strong><br />
+	<%= t("general.tool_image") %>: <%= image_tag(@o_all.image) %><%= @o_all.image %><br />
+	<%= t("general.factors") %>: 
 
 	<% if params[:tool] %>
 		<% params[:tool][:factors].each do |i, j| %>

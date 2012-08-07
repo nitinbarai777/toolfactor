@@ -3,10 +3,13 @@
 <%= form_for @o_single do |f| %>
   <%#= f.error_messages %>
 
-  <p>
+  <div>
     <%= f.label :name %>
     <%= f.text_field :name %>
-  </p>
+	<span><% if @o_single.errors[:name].any? %>
+		<%= t('general.filed_required') %></span>
+	<% end %>
+  </div>
 
   <p><%= f.submit :value => t("general.save") %>
 <div class="btn"><%= link_to t("general.back"), ages_path %></div>

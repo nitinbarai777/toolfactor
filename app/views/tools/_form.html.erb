@@ -1,12 +1,14 @@
-<div class="admintextbox">
-<div class="admintextbox-leftpart ">
+<div class="editablebox">
 <%= form_for @o_single do |f| %>
   <%#= f.error_messages %>
 
-  <p>
+  <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
-  </p>
+	<span><% if @o_single.errors[:name].any? %>
+		<%= t('general.filed_required') %></span>
+	<% end %>
+  </div>
   <p>
     <%= f.label :description %>
     <%= f.text_area :description %>
@@ -20,6 +22,6 @@
 <div class="btn"><%= link_to t("general.back"), tools_path %></div>
 </p>
 <% end %>
-</div>
+
 <div class="cl"></div>
 </div>

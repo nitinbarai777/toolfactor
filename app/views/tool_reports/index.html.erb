@@ -1,14 +1,15 @@
-<h3><%= t("general.logs") %></h3>
-<%= link_to image_tag("detail-icon.png", :width => "16px", :height => "16px", :title => t("general.export_report")), export_csv_path %>
-
+<h3><%= t("general.logs") %>
+	<div style="float:right;">
+		<%= link_to image_tag("csv.jpeg", :width => "25px", :height => "25px", :title => t("general.export_report")), "/report_logs.csv" %>
+	</div>
+</h3>
 <%= form_tag tool_reports_path, :method => 'get', :id => "div_update_search" do %>
-  <p>
-    <%= t("general.search") %>: <%= text_field_tag :search, params[:search] %>
-    <%#= submit_tag t("general.search"), :name => nil %>
-  </p>
+	  <p>
+		<%= t("general.search") %>: <%= text_field_tag :search, params[:search] %>
+	    <%#= submit_tag t("general.search"), :name => nil %>
+	  </p>
   <div id="div_update"><%= render 'fetchAll' %></div>
 <% end %>
-
 
 <div class="cl"></div>
 

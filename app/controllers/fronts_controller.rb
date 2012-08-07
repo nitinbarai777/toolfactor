@@ -26,6 +26,8 @@ class FrontsController < ApplicationController
 		@o_single.browser_agent = request.user_agent
 		if age_id != ''
 			@o_single.age = Age.find(age_id.to_i).name
+		else
+			@o_single.age = " "
 		end
 		@o_single.factors = factor_arr.join(",")
 		@o_single.save		

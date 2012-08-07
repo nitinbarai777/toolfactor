@@ -1,24 +1,24 @@
 <h3><%= t("general.show_detail") %></h3>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= t("general.tool_name") %>:</strong>
   <%= @o_single.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong><%= t("general.tool_description") %>:</strong>
   <%= @o_single.description.html_safe %>
 </p>
 
 <p>
-  <strong>Image:</strong>
+  <strong><%= t("general.tool_image") %>:</strong>
   <%= image_tag(@o_single.image) %>
 </p>
 
 
   
 <p>
-  <strong>Ages:</strong>&nbsp;
+  <strong><%= t("general.ages") %>:</strong>&nbsp;
   <% for o_row_ages in @o_tool_ages %>
 	<span><%= o_row_ages.age.name %></span>,&nbsp;&nbsp;
   <% end %>
@@ -26,7 +26,7 @@
 
 
 <p>
-  <strong>Factors:</strong>&nbsp;
+  <strong><%= t("general.factors") %>:</strong>&nbsp;
   <% for o_row_factors in @o_tool_factors %>
 	<span><%= o_row_factors.factor.name %></span>,&nbsp;&nbsp;
   <% end %>

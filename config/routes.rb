@@ -26,7 +26,7 @@ Toolfactor::Application.routes.draw do
   match 'age_list/:id' => 'tool_ages#index', :as => :age_list
   match 'factor_list/:id' => 'tool_factors#index', :as => :factor_list
 
-  match 'export_csv' => 'tool_reports#export_csv', :as => :export_csv
+  match 'report_logs' => 'tool_reports#export_csv', :as => :report_logs
 
 
   # The priority is based upon order of creation:
