@@ -8,8 +8,14 @@
 				
                 <p><strong><%= t("general.factors") %>: </strong>
 
+				  <% @j = 0 %>
 				  <% for o_row_factors in Factor.all %>
-					<label><%= radio_button_tag "factors[#{o_row_factors.id}]", o_row_factors.id %> <%= o_row_factors.name %></label>
+					<% if @j % 2 == 0 %>	
+						<label><%= radio_button_tag "tool[factors][#{@j}]", o_row_factors.id %> <%= o_row_factors.name %></label>
+					<% else %>
+						<label><%= radio_button_tag "tool[factors][#{@j-1}]", o_row_factors.id %> <%= o_row_factors.name %></label>
+					<% end %>
+					<% @j = @j + 1 %>
 				  <% end %>
 
 				</label></p>
@@ -19,7 +25,7 @@
 					<div class="cl"></div>
 				</p>
 
-            
+            <div id="div_update"><%= render 'searchTool' %></div>
 		<% end %>
 	</div>
 </div>

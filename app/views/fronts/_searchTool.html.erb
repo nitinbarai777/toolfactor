@@ -1,32 +1,33 @@
 <%= hidden_field_tag :direction, params[:direction] %>
 <%= hidden_field_tag :sort, params[:sort] %>
+<% if @o_all %>
 <table class="pretty" width="100%">
   <tr>
-    <th width="20%"><%= "Mearchant" %></th>
-    <th width="10%"><%= "contact" %></th>
-    <th width="15%"><%= "city" %></th>
-	<th width="10%"><%= "area" %></th>
-	<th width="20%"><%= "Coupon" %></th>
-	<th width="2%"><%= "Discount" %></th>
-	<th width="10%"><%= "Valid" %></th>
-	<th width="13%"><%= "Get Coupon" %></th>
+    <th width="20%"><%= "Name" %></th>
+    <th width="10%"><%= "Description" %></th>
+    <th width="15%"><%= "Image" %></th>
   </tr>
 
-  <% for o_row in @o_all %>
+  
     <tr>
-      <td><%= o_row.name %></td>
-      <td><%= o_row.contact %></td>
-      <td><%= o_row.cityname %></td>
-	<td><%= o_row.areaname %></td>
-	<td><%= o_row.couponname %></td>
-	<td><%= o_row.price %>%</td>
-	<td><%= o_row.valid_to %></td>
-	<td>
-		<%= link_to image_tag('get-btn.png'), coupon_by_id_path(o_row.id.to_i), :id => "id_get_coupon" %>
-	</td>
-
+      <td><%= @o_all.name %></td>
+      <td><%= @o_all.description %></td>
+      <td><%= @o_all.image %></td>
     </tr>
-  <% end %>
+  
 </table>
-<%= will_paginate @o_all %>
+<% end %>
+
+<% if params[:tool] %>
+	<% params[:tool][:factors].each do |i, j| %>
+		<%#= j %>
+	<% end %>
+<% end %>
+
+<%#= debug(@factors_id_arr) %>
+<%#= debug(factors = Array[3,2]) %>
+
+
+
+
 
