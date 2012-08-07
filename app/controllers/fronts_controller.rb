@@ -14,7 +14,7 @@ class FrontsController < ApplicationController
 
 	if (params[:tool] || (params[:age_id] && params[:age_id] != ''))
 		toolReportNew(params[:age_id], @factors_id_arr)
-		@o_all = Tool.get_search_tools(params[:age_id], @factors_id_arr).first
+		@o_all = Tool.get_search_tools(params[:age_id], @factors_id_arr, params[:tool]).first
 	end
 
   end

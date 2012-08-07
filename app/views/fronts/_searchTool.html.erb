@@ -6,7 +6,7 @@
 	<%= t("general.tool_name") %>: <strong><%= @o_all.name %></strong><br />
 	<%= t("general.tool_description") %>: <strong><%= @o_all.description.html_safe %></strong><br />
 	<%= t("general.tool_image") %>: <%= image_tag(@o_all.image) %><%= @o_all.image %><br />
-	<%= t("general.factors") %>: 
+	<%= t("general.person_will_have_following_factors") %>: 
 
 	<% if params[:tool] %>
 		<% params[:tool][:factors].each do |i, j| %>
