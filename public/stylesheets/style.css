@@ -6,6 +6,7 @@ html {overflow: -moz-scrollbars-vertical;}
 .cl { clear:both; height:0; } 
 a, img { border:none; outline:0; } 
 ul, li { margin:0; padding:0; list-style:none; }
+ul, li span{ margin:0 20px 0 20px; padding:0; list-style:none; }
 h1, h2, h3, h4, h5, h6 { margin:0; padding:0; }
 #wrapper { margin:0; padding:0; }
 .container { margin:0 auto; width:1000px; background:#ececec;}
@@ -59,6 +60,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c65095', end
 .pagestext a { color:#6b6b6b; text-decoration:underline; }
 .pagestext a:hover { color:#bb3830; text-decoration:underline; }
 .pagestext h3 { margin:0 0 10px 0; padding:0 0 5px 0; font-size:20px; color:#bb3830; font-weight:bold; border-bottom:#000 dashed 1px;  }
+
+.pagestext h4 { margin:0 0 15px 0; padding:0 0 5px 0; font-size:15px; color:#0099CC; font-weight:bold;  }
+
 .contacttext { font-size:14px; font-weight:normal; color:#414141; line-height:25px;}
 .contacttext p { margin:0; padding:0 0 10px 0; font-family:Arial, Helvetica, sans-serif;  font-size:13px; font-weight:normal; color:#414141; line-height:18px;}
 .profilebox { float:left; padding-top:15px;  }
@@ -67,11 +71,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c65095', end
 .profile-leftpart form { margin-left:0;}
 #load { background: url("/images/transparant.png") repeat scroll center top transparent;
     float: left;
-    height: 430px;
+    height: 306px;
     left: 0;
-    margin: 0 auto;
+    margin-left: 213px;
     min-height: 120px;
-    padding-top: 110px;
+    padding-top: 337px;
     position: absolute;
     text-align: center;
     top: 0;

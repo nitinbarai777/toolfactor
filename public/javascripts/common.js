@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
 
-	$('.getcupon_load a').click(function() {
+	$('.find_person').click(function() {
 		$('#load').show();
 	});
 

@@ -15,7 +15,7 @@ en:
     successfully_destroyed: Successfully destroyed
     all_records: All Records
     export_report: Export as CSV
-    no_result: No Result
+    no_result: No Result Found
     search: Search
     new: New
     Add: Add
@@ -64,3 +64,6 @@ en:
     logs: Logs
     filed_required: This filed is required.
     select_factor: Select Factor
+    home_page_admin_content: Welcome to WebAdvisor
+    home_page_front_content: Welcome to WebAdvisor
+    or: OR
