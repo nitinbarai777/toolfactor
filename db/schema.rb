@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120806104308) do
+ActiveRecord::Schema.define(:version => 20120807072200) do
 
   create_table "ages", :force => true do |t|
     t.string   "name"
@@ -44,6 +44,14 @@ ActiveRecord::Schema.define(:version => 20120806104308) do
 
   add_index "tool_factors", ["factor_id"], :name => "index_tool_factors_on_factor_id"
   add_index "tool_factors", ["tool_id"], :name => "index_tool_factors_on_tool_id"
+
+  create_table "tool_reports", :force => true do |t|
+    t.string   "browser_agent"
+    t.string   "age"
+    t.string   "factors"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "tools", :force => true do |t|
     t.string   "name"

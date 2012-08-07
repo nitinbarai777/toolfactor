@@ -12,7 +12,8 @@ class FrontsController < ApplicationController
 		end
     end
 
-	if params[:tool] || params[:age_id] != ''
+	if (params[:tool] || (params[:age_id] && params[:age_id] != ''))
+		toolReportNew(params[:age_id], @factors_id_arr)
 		@o_all = Tool.get_search_tools(params[:age_id], @factors_id_arr).first
 	end
 
@@ -20,6 +21,15 @@ class FrontsController < ApplicationController
 
   private
   
+  def toolReportNew(age_id, factor_arr)
+		@o_single = ToolReport.new
+		@o_single.browser_agent = request.user_agent
+		if age_id != ''
+			@o_single.age = Age.find(age_id.to_i).name
+		end
+		@o_single.factors = factor_arr.join(",")
+		@o_single.save		
+  end
   # sort column private method
   def sort_column
     Tool.column_names.include?(params[:sort]) ? params[:sort] : "id"

@@ -1,28 +1,23 @@
 <%= hidden_field_tag :direction, params[:direction] %>
 <%= hidden_field_tag :sort, params[:sort] %>
 <% if @o_all %>
-<table class="pretty" width="100%">
-  <tr>
-    <th width="20%"><%= "Name" %></th>
-    <th width="10%"><%= "Description" %></th>
-    <th width="15%"><%= "Image" %></th>
-  </tr>
+	<h3><%= t("general.tool_suggest") %></h3>
 
-  
-    <tr>
-      <td><%= @o_all.name %></td>
-      <td><%= @o_all.description %></td>
-      <td><%= @o_all.image %></td>
-    </tr>
-  
-</table>
-<% end %>
+	<%= "Name" %>: <strong><%= @o_all.name %></strong><br />
+	<%= "Description" %>: <strong><%= @o_all.description.html_safe %></strong><br />
+	<%= "Image" %>: <%= image_tag(@o_all.image) %><%= @o_all.image %><br />
+	<%= "Factors" %>: 
 
-<% if params[:tool] %>
-	<% params[:tool][:factors].each do |i, j| %>
-		<%#= j %>
+	<% if params[:tool] %>
+		<% params[:tool][:factors].each do |i, j| %>
+			<strong><%= Factor.find(j.to_i).name %>, </strong>
+		<% end %>
 	<% end %>
+
+<% else %>
+<%= t("general.no_result") %>
 <% end %>
+
 
 <%#= debug(@factors_id_arr) %>
 <%#= debug(factors = Array[3,2]) %>

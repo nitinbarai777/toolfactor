@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  browser_agent: MyString
+  age: MyString
+  factors: MyString
+
+two:
+  browser_agent: MyString
+  age: MyString
+  factors: MyString

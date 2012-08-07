@@ -14,6 +14,8 @@ en:
     successfully_updated: Successfully updated
     successfully_destroyed: Successfully destroyed
     all_records: All Records
+    export_report: Export as CSV
+    no_result: No Result
     search: Search
     new: New
     actions: Actions

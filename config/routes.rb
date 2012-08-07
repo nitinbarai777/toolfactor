@@ -1,5 +1,7 @@
 Toolfactor::Application.routes.draw do
 
+  resources :tool_reports
+
   resources :tool_ages
 
   resources :tool_factors
@@ -23,6 +25,9 @@ Toolfactor::Application.routes.draw do
 
   match 'age_list/:id' => 'tool_ages#index', :as => :age_list
   match 'factor_list/:id' => 'tool_factors#index', :as => :factor_list
+
+  match 'export_csv' => 'tool_reports#export_csv', :as => :export_csv
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

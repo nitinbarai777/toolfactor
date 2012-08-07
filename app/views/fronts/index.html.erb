@@ -4,21 +4,22 @@
 <div class="contacttext">
 		<%= form_tag fronts_path, :method => 'get', :id => "div_update_search_tool" do %>
         	
-                <p><label><%= t("general.age") %>: <%= select_tag :age_id, options_for_select([["Select Age", ""]] + Age.all.map { |c| [c.name, c.id] }), :width => "30%"  %></label></p>
+                <p><strong><%= t("general.age") %>:</strong> <%= select_tag :age_id, options_for_select([["Select Age", ""]] + Age.all.map { |c| [c.name, c.id] }), :width => "30%"  %></p>
 				
-                <p><strong><%= t("general.factors") %>: </strong>
+                <p><strong><%= t("general.choose_factors") %>: </strong>
 
 				  <% @j = 0 %>
+				<ul>
 				  <% for o_row_factors in Factor.all %>
 					<% if @j % 2 == 0 %>	
-						<label><%= radio_button_tag "tool[factors][#{@j}]", o_row_factors.id %> <%= o_row_factors.name %></label>
+						<li><%= radio_button_tag "tool[factors][#{@j}]", o_row_factors.id %> <%= o_row_factors.name %> OR 
 					<% else %>
-						<label><%= radio_button_tag "tool[factors][#{@j-1}]", o_row_factors.id %> <%= o_row_factors.name %></label>
+						<%= radio_button_tag "tool[factors][#{@j-1}]", o_row_factors.id %> <%= o_row_factors.name %></li>
 					<% end %>
 					<% @j = @j + 1 %>
 				  <% end %>
-
-				</label></p>
+				</ul>
+				</p>
 
 				<p>
 					<%= submit_tag t("general.find_person"), :name => nil %>
