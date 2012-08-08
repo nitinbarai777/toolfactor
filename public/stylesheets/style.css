@@ -7,6 +7,16 @@ html {overflow: -moz-scrollbars-vertical;}
 a, img { border:none; outline:0; } 
 ul, li { margin:0; padding:0; list-style:none; }
 ul, li span{ margin:0 20px 0 20px; padding:0; list-style:none; }
+
+li .li_wrapper{ width:100%; padding:10px 0px; }
+li .left_li{ float:left; margin-right:10px; width:19%; }
+li .right_li{ float:left; width:19%; }
+li .middle_li{ float:left; margin-right:10px; width:10%;}
+li .li_radio_text{ padding-left:5px;display:inline; }
+.ul_wrapper {border: 1px solid #CCCCCC; padding:10px 0px;}
+
+
+
 h1, h2, h3, h4, h5, h6 { margin:0; padding:0; }
 #wrapper { margin:0; padding:0; }
 .container { margin:0 auto; width:1000px; background:#ececec;}
@@ -69,18 +79,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c65095', end
 .profile-leftpart { width:475px; float:left; }
 .profile-leftpart span { font-size:12px; font-style:italic; display:block; margin-top:-12px; color:#ff0000; }
 .profile-leftpart form { margin-left:0;}
-#load { background: url("/images/transparant.png") repeat scroll center top transparent;
+#load {
     float: left;
-    height: 306px;
-    left: 0;
-    margin-left: 213px;
-    min-height: 120px;
-    padding-top: 337px;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    width: 1002px;
     z-index: 99;
+	margin-left: 10px;
+	margin-top: -9px;
 }
 div.field, div.actions {
     margin-bottom: 10px;

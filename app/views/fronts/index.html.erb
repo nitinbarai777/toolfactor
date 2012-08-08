@@ -4,28 +4,48 @@
 	<div class="contacttext">
 <h4><%= t("general.find_person") %></h4>
 		<%= form_tag fronts_path, :method => 'get', :id => "div_update_search_tool" do %>
-                <p><strong><%= t("general.select_age_range") %>: </strong><%= select_tag :age_id, options_for_select([[t("general.select_age_range"), ""]] + Age.all.map { |c| [c.name, c.id] }), :width => "30%"  %></p>
+                <p><label><strong><%= t("general.select_age_range") %>: </strong><%= select_tag :age_id, options_for_select([[t("general.select_age_range"), ""]] + Age.all.map { |c| [c.name, c.id] }), :width => "30%"  %></label></p>
 				
-                <p><strong><%= t("general.choose_factors") %>: </strong>
+                <p><label><strong><%= t("general.choose_factors") %>: </strong>
 				    <% @j = 0 %>
+				<div class="ul_wrapper">
 					<ul>
 					  <% for o_row_factors in Factor.all %>
 						<% if @j % 2 == 0 %>	
-							<li><%= radio_button_tag "tool[factors][#{@j}]", o_row_factors.id %> <%= o_row_factors.name %><span><%= t("general.or") %></span>
+							<li>
+							<div class="li_wrapper">
+							<div class="left_li">
+								<%= radio_button_tag "tool[factors][#{@j}]", o_row_factors.id %>
+								<div class="li_radio_text">
+									<%= o_row_factors.name %>
+								</div>		
+							</div>
+							<div class="middle_li"><%= t("general.or") %></div>
+							
 						<% else %>
-							<%= radio_button_tag "tool[factors][#{@j-1}]", o_row_factors.id %> <%= o_row_factors.name %></li>
+							<div class="right_li">
+								<%= radio_button_tag "tool[factors][#{@j-1}]", o_row_factors.id %> 
+								<div class="li_radio_text">
+									<%= o_row_factors.name %>
+								</div>
+							</div>
+							</div>
+							<div class="cl"></div>
+							</li>
 						<% end %>
 						<% @j = @j + 1 %>
 					  <% end %>
 					</ul>
-				</p>
-				<p>
+					</div>
+				</label></p>
+				<p><label>
 					<%= submit_tag t("general.find_person"), :name => nil, :id => 'find_person',:class => 'find_person' %>
+					<div style="display:none;" class="loaddetail" id="load"><%= image_tag "loading.gif" %></div>
 					<div class="cl"></div>
-				</p>
+				</label></p>
 	            <div id="div_update"><%= render 'searchTool' %></div>
 		<% end %>
-		<div style="display:none;" class="loaddetail" id="load"><%= image_tag "loading.gif" %></div>
+		
 	</div>
 </div>
 </div>

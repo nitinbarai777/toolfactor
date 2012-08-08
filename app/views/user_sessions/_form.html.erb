@@ -2,26 +2,27 @@
   
 <div class="loginfom">
 
-<h3>Login</h3>
+<h3><%= t("general.login") %></h3>
 <% if @user_session.errors.any? %>
     <div id="error_explanation">
 
       <% @user_session.errors.full_messages.each do |msg| %>
-        <%= msg %>
+		<% @msg_var = "general.#{msg.gsub(' ', "_")}" %>
+        <%= t(@msg_var) %>
       <% end %>
 
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :username %>
+    <%= f.label t("general.username") %>
     <%= f.text_field :username %>
   </div>
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label t("general.password") %>
     <%= f.password_field :password %>
   </div>
   <div class="actions">
-    <%= f.submit :Login %>
+    <%= f.submit t("general.login_btn") %>
   </div>
   </div>
 <% end %>

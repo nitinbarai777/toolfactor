@@ -17,24 +17,6 @@ class UserSessionsController < ApplicationController
   end
 
 
-  def create1
-	if params[:user][:email].blank?
-		flash[:error_login] = 'Email Required.'
-		redirect_to :action => "new"
-	elsif params[:user][:password].blank?
-		flash[:error_login] = 'Password Requied.'
-		redirect_to :action => "new"
-	elsif user = User.authenticate(params[:user][:email],params[:user][:password])
-		session[:user_id] = user.id
-		flash[:error_login] = 'Login successfully.'
-		redirect_to :controller => "pages", :action => "index"
-    else
-  		flash[:error_login] = 'Credentials you entered are not valid.Please check the spelling for both email address and password.'
-	    redirect_to :action => "new"
-    end
-  end
-
-
   # POST /user_sessions
   # POST /user_sessions.xml
   def create
@@ -43,7 +25,7 @@ class UserSessionsController < ApplicationController
     respond_to do |format|
       if @user_session.save
 		session[:user_id] = current_user.id
-	    format.html { redirect_to(:admin_home, :notice => t("common.login_successful")) }
+	    format.html { redirect_to(:admin_home, :notice => t("general.login_successful")) }
         format.xml { render :xml => @user_session, :status => :created, :location => @user_session }
       else
         format.html { render :action => "new" }
@@ -60,11 +42,15 @@ class UserSessionsController < ApplicationController
 	session[:user_id] = nil
 
     respond_to do |format|
-      format.html { redirect_to(:users, :notice => 'Goodbye!') }
+      format.html { redirect_to(:login, :notice => t('general.Goodbye')) }
       format.xml { head :ok }
     end
   end
 
   def home
+	if !params[:locale].nil?
+		redirect_to session[:requested_path]
+	else
+	end
   end
 end

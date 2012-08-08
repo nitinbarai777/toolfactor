@@ -3,19 +3,19 @@
 <% if @o_all %>
 	<h3><%= t("general.tool_suggest") %></h3>
 
-	<%= t("general.tool_name") %>: <strong><%= @o_all.name %></strong><br />
-	<%= t("general.tool_description") %>: <strong><%= @o_all.description.html_safe %></strong><br />
-	<%= t("general.tool_image") %>: <%= image_tag(@o_all.image) %><%= @o_all.image %><br />
-	<%= t("general.person_will_have_following_factors") %>: 
+	<p><label><%= t("general.tool_name") %>: <strong><%= @o_all.name %></strong></label></p>
+	<p><label><%= t("general.tool_description") %>: <strong><%= @o_all.description.html_safe %></strong></label></p>
+	<p><label><%= t("general.tool_image") %>: <%= image_tag @o_all.image_url(:thumb), :width => 100, :height => 70 %></label></p>
+	<p><label><%= t("general.person_will_have_following_factors") %>: 
 
 	<% if params[:tool] %>
 		<% params[:tool][:factors].each do |i, j| %>
 			<strong><%= Factor.find(j.to_i).name %>, </strong>
 		<% end %>
 	<% end %>
-
+</label></p>
 <% else %>
-<%= t("general.no_result") %>
+<p><label><%= t("general.no_result") %></label></p>
 <% end %>
 
 

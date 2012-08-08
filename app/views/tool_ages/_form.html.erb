@@ -3,7 +3,7 @@
   <%#= f.error_messages %>
   <div>
     <%= f.hidden_field :tool_id, :value => session[:tool_id] %>
-    <%= f.label :age_id %>
+    <%= f.label t("general.age") %>
     <%= f.select :age_id, options_for_select([[t("general.select_age_range"), ""]] + Age.all.map { |c| [c.name, c.id] },@o_single.age_id)  %>
 	<span><% if @o_single.errors[:age_id].any? %>
 		<%= t('general.filed_required') %></span>
