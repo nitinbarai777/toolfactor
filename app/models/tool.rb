@@ -14,12 +14,12 @@ class Tool < ActiveRecord::Base
   end
 
   def self.get_search_tools(age_id, factors, too_ids)
-	if age_id && age_id != "" && too_ids
-	  joins(:tool_ages, :tool_factors).where("tool_ages.age_id" => age_id, "tool_factors.factor_id" => factors).select("tools.name, tools.description, tools.image")
-	elsif age_id && age_id != "" && !too_ids
-	  joins(:tool_ages, :tool_factors).where("tool_ages.age_id" => age_id).select("tools.name, tools.description, tools.image")
-	elsif !age_id && age_id == "" && too_ids
-	  joins(:tool_ages, :tool_factors).where("tool_factors.factor_id" => factors).select("tools.name, tools.description, tools.image")
+	if (!age_id.nil? && !too_ids.nil?)
+	  joins(:tool_ages, :tool_factors).where("tool_ages.age_id" => age_id, "tool_factors.factor_id" => factors).select("tools.name, tools.description, tools.image, tools.id")
+	elsif (!age_id.nil? && too_ids.nil?)
+	  joins(:tool_ages).where("tool_ages.age_id" => age_id).select("tools.name, tools.description, tools.image, tools.id")
+	elsif (age_id.nil? && !too_ids.nil?)
+	  joins(:tool_factors).where("tool_factors.factor_id" => factors).select("tools.name, tools.description, tools.image, tools.id")
 	else
 	  scoped
 	end

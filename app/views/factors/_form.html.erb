@@ -4,7 +4,7 @@
   <%#= f.error_messages %>
 
   <div>
-    <%= f.label :name %>
+    <%= f.label t("general.name") %>
     <%= f.text_field :name %>
 	<span><% if @o_single.errors[:name].any? %>
 		<%= t('general.filed_required') %></span>

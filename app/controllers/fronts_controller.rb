@@ -5,14 +5,14 @@ class FrontsController < ApplicationController
   def index
 	@factors_id_arr = Array.new
    	#@factors_id_arr = params[:tool][:factors].collect { |factor_id| factor_id.to_i }
-	if params[:tool]
+	if !params[:tool].nil?
 		params[:tool][:factors].each do |i, j|
 			#@factors_id_arr.push[j]
 			@factors_id_arr << j.to_i
 		end
     end
 
-	if (params[:tool] || (params[:age_id] && params[:age_id] != ''))
+	if (!params[:tool].nil? || !params[:age_id].nil?)
 		toolReportNew(params[:age_id], @factors_id_arr)
 		@o_all = Tool.get_search_tools(params[:age_id], @factors_id_arr, params[:tool]).first
 	end

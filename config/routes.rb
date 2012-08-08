@@ -28,6 +28,9 @@ Toolfactor::Application.routes.draw do
 
   match 'report_logs' => 'tool_reports#export_csv', :as => :report_logs
 
+  match 'setlocale/:locale' => 'fronts#index', :as => :setlocale
+  match 'setlocaleadmin/:locale' => 'user_sessions#home', :as => :setlocaleadmin
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

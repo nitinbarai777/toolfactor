@@ -3,19 +3,19 @@
   <%#= f.error_messages %>
 
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label t("general.name") %>
     <%= f.text_field :name %>
 	<span><% if @o_single.errors[:name].any? %>
 		<%= t('general.filed_required') %></span>
 	<% end %>
   </div>
   <p>
-    <%= f.label :description %>
+    <%= f.label t("general.description") %>
     <%= f.text_area :description %>
   </p>
 
   <p>
-    <%= f.label :image %>
+    <%= f.label t("general.image") %>
     <%= f.file_field :image %>
   </p>
   <p><%= f.submit :value => t("general.save") %>

@@ -2,9 +2,10 @@
 <%= hidden_field_tag :sort, params[:sort] %>
 <table class="pretty" width="100%">
   <tr>
-    <th><%= sortable "name" %></th>
-    <th><%= sortable "description" %></th>
-	<th width="20%"><%= sortable "created_at" %></th>
+
+    <th width="20%"><%= sortable "name", t("general.name") %></th>
+    <th width="40%"><%= sortable "description", t("general.description") %></th>
+	<th width="20%"><%= sortable "created_at", t("general.created_at") %></th>
 	<th width="20%"><%= t("general.actions") %></th>
   </tr>
   <% for o_row in @o_all %>

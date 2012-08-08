@@ -1,7 +1,7 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
+fi:
   general:
     age_details: Age Details
     factor_details: Factor Details
@@ -62,8 +62,8 @@ en:
     logs: Logs
     filed_required: This filed is required.
     select_factor: Select Factor
-    home_page_admin_content: Welcome to WebAdvisor en
-    home_page_front_content: Welcome to WebAdvisor en
+    home_page_admin_content: Welcome to WebAdvisor fi
+    home_page_front_content: Welcome to WebAdvisor fi
     or: OR
     person_will_have_following_factors: The person will have the following factors
     username: Username

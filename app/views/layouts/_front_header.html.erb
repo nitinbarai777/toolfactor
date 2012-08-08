@@ -1,6 +1,10 @@
 <div class="topbox">
 	<ul>
-    	<li><%= link_to t("general.home"), fronts_path %></li>
+    	<li><%= link_to t("general.home"), fronts_path %></li> | 
+		<li>
+		  <%= link_to 'en', setlocale_path('en') %>
+	    | <%= link_to 'fi', setlocale_path('fi') %>
+		</li>
     </ul>
 	<div class="cl"></div>
 </div>

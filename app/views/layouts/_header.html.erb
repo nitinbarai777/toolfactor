@@ -9,6 +9,10 @@
 			<li><%= t("general.welcome_admin") %></li>
 			<li><%= link_to t("general.home"), root_path %></li>
 		<% end %>
+		<li>
+		  <%= link_to 'en', setlocaleadmin_path('en') %>
+	    | <%= link_to 'fi', setlocaleadmin_path('fi') %>
+		</li>
       </ul>
     </nav>
 	<br />
