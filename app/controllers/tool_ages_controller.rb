@@ -6,7 +6,7 @@ class ToolAgesController < ApplicationController
 	unless params[:id].nil?
 		session[:tool_id] = params[:id].to_i
 	end
-    @o_all = ToolAge.order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
+    @o_all = ToolAge.search(session[:tool_id]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
   end
   
   #fetch single record and display
